@@ -14,7 +14,8 @@ public class ActiiveMqConfiguration {
 
   @Bean("activemqVirtualTopicQueue")
   public ActiveMQQueue activemqVirtualTopicQueue() throws UnknownHostException {
-    String virtualTopicName = "s3FileuploadVirtualTopic";
+    // change the virtual topic name
+    String virtualTopicName = "myTestFileuploadVirtualTopic";
     return new ActiveMQQueue(String.format("Consumer.%s.VirtualTopic.%s",
         InetAddress.getLocalHost().getCanonicalHostName() + "_springboot", virtualTopicName));
   }
